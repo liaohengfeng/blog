@@ -1,0 +1,66 @@
+---
+title: 扩展欧几里得
+tags:
+  - OI
+  - 扩欧
+cover: 'https://pic.imgdb.cn/item/65eebd469f345e8d030d49d1.th.jpg'
+abbrlink: b92b47a1
+date: 2024-03-11 16:06:10
+---
+
+
+#### 在 $ax+by=gcd(a,b)$ 中：
+
+1. 求解过程中始终有  **$|x| \leq |b|$** , **$|y| \leq |a|$**。
+
+   证明如下：
+   $$
+   由对称性设 a\geq b,a=kb+r \\
+   当b=0时，满足条件。且此时~|x|,|y|~满足最小值最小。\\
+   则有
+   \begin{cases}
+   ~~~x_1a+y_1b~~~~~~~~=gcd(a,b) \\
+   ~~~x_2b+y_2(a\%b)=gcd(b,a\%b)
+   \end{cases}\\
+   其中，
+   \begin{cases}
+   x_1=y_2\\
+   y_1=x_2-x_1\lfloor \frac{a}{b} \rfloor\\
+   x_2 \leq a\%b~~,~~y_2 \leq |b| ~~~ (数学归纳法)
+   \end{cases}\\
+   \therefore |x_1|=|y_2|\leq |b| \\
+   \begin{align}
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\because y_1 &=x_2-x_1\lfloor \frac{a}{b} \rfloor \\
+    &=x_2-kx_1\\
+    &=
+     \begin{cases}
+     |1-k|b~\leq~|a| ~~~ (b>0)\\
+     |k-1|b~\leq~|a| ~~~ (b<0)
+     \end{cases} \\
+   \end{align}\\\
+   \therefore |y_1|\leq a \\\
+   综上所述， |x|\leq|b|,|y|\leq|a|。
+   $$
+
+2. 设 $|a| \geq |b|$ , 则求出的 *x* 满足 $|x|$ 最小。
+
+   证明如下：
+   $$
+   在~1中，|x_1|\leq|a\%b|。\\
+   当~b\geq \lceil\frac{|a|}{2} \rceil~时，|x_1|\leq |a|-\lceil\frac{|a|}{2} \rceil=\lceil\frac{|a|}{2} \rceil \\
+   否则，|x_1|\leq b \leq \lceil\frac{|a|}{2} \rceil\\
+   \therefore |x_2|\leq\frac{a}{2} \\
+   因为|x_1|=|y_2|\leq\frac{b}{2},所以只用证 |y_1|\leq \frac{a}{2}\\
+   \begin{align}
+   \because y_1 &=x_2-x_1\lfloor \frac{a}{b} \rfloor \\
+    &=x_2-kx_1\\
+    &=\frac{a}{4} -k\frac{b}{2}\\
+    &=\frac{kb+r}{4}-\frac{kb}{2}\\
+    &=\frac{-kb+r}{2}\\
+   \therefore |y_1| &\leq\frac{|kb+r|}{2}
+   =\frac{|a|}{2}
+   \end{align}\\
+   综上，得证。
+   $$
+   
+   ​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

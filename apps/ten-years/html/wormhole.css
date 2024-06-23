@@ -1,0 +1,87 @@
+* {
+  color: #eee;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #060606;
+}
+a {
+  text-decoration: none;
+}
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+.container canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.container #content {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  overflow: hidden;
+  display: none;
+}
+.container #content h3 {
+  font-size: 1em;
+}
+.container #content h3 #name {
+  color: #0d6aad;
+}
+.container #content #vortex img {
+  width: 70%;
+  object-fit: cover;
+}
+.container #content .meta #time {
+  color: #d7d7d7;
+}
+.container #content .meta #message {
+  margin: auto;
+  text-align: center;
+  padding: 1rem 10rem;
+}
+.container #content .meta #message .message-left,
+.container #content .meta #message .message-right {
+  font-size: 17px;
+  color: white;
+}
+.container #content .meta #message .text {
+  text-shadow: 2px 2px 2px #3e3e3e;
+  font-style: italic;
+}
+.container #content .footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+}
+.container #content .footer img#logo {
+  margin-top: 0.5em;
+  width: auto;
+  height: 16px;
+}
+@media screen and (max-width: 769px) {
+  .container #content .meta #message {
+    padding: 1.5rem;
+  }
+}
+/*# sourceMappingURL=wormhole.css.map */
